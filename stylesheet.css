@@ -1,0 +1,36 @@
+#slider {
+  border: 1px solid black;
+  height: 80px;
+  width: 180px;
+  border-radius: 50px;
+  background-color: grey;
+}
+
+#icon {
+  float:left;
+  border: 1px solid black;
+  height: 80px;
+  width: 82px;
+  border-radius: 50px;
+  margin-left: 97px;
+}
+
+#counter {
+  margin-top: -35px;
+  margin-left: 35px;
+  font-size: 30px;
+  color: white;
+}
+
+#plus {
+  visibility: hidden;
+  height: 80px;
+  width: 82px;
+  margin-left: 107px;
+  margin-top: 30px;
+}
+
+#doge_icon {
+  height: 80px;
+  border-radius: 50px;
+}
