@@ -1,23 +1,28 @@
 $(document).ready(function() {
-  var counter = 0;
+  // $.get("http://dogecoinerme.appspot.com/total.jsp?uid=sol&domain=block.io"), function(data) {
+  //   console.log(data.trim());
+  // }
   $('#counter').html(counter.toString());
+  // click functionality on the slider 
   $('#slider').click(function() {
-    counter += 1;
-    $.get("http://dogecoinerme.appspot.com/oneclick.jsp", function(data) {
-      alert(data.trim);
-    }
+    //access the counter app and sets it's value to counter, and 
+    $.get("http://dogecoinerme.appspot.com/oneclick.jsp?uid=sol&domain=block.io", function(data) {
+      console.log(data.trim());
+      counter = data.trim();
+      $('#counter').html(counter.toString());
+    });
     $('#plus').css({visibility: 'visible'});
-
     if(counter>=1) {
       $('#icon').animate({marginLeft:"0px"}, 200);
       $('#slider').css({backgroundColor:"rgb(0, 255, 0)"});
       $('#icon').css({pointerEvents:"auto"});
     } else {
       $('#icon').animate({marginLeft:'38px'}, 200);
-      $('#slider').css({backgroundColor:"grey"});
-      $('#icon').css({pointerEvents:"none"});
+      $('#slider').css({backgroundColor:'grey'});
+      $('#icon').css({pointerEvents:'none'});
     }
   });
+  // click functionality on the icon
   $('#icon').click(function() {
     counter -= 2;
     $('#counter').html(counter.toString());
