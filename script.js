@@ -1,25 +1,46 @@
 $(document).ready(function() {
   var counter = 0;
-  $('#icon').draggable = false;
-  $('#doge_icon').draggable = false;
   $('#counter').html(counter.toString());
   $('#slider').click(function() {
-    $('#plus').css({visibility: 'visible'});
-    $('#slider').css({backgroundColor:"green"});
-    $('#icon').animate({marginLeft:"0px"}, 200);
     counter += 1;
+    $.get("http://dogecoinerme.appspot.com/oneclick.jsp", function(data) {
+      alert(data.trim);
+    }
+    $('#plus').css({visibility: 'visible'});
+
+    if(counter>=1) {
+      $('#icon').animate({marginLeft:"0px"}, 200);
+      $('#slider').css({backgroundColor:"rgb(0, 255, 0)"});
+      $('#icon').css({pointerEvents:"auto"});
+    } else {
+      $('#icon').animate({marginLeft:'38px'}, 200);
+      $('#slider').css({backgroundColor:"grey"});
+      $('#icon').css({pointerEvents:"none"});
+    }
+  });
+  $('#icon').click(function() {
+    counter -= 2;
+    $('#counter').html(counter.toString());
+  });
+  $('#plus').click(function() {
     $('#counter').html(counter.toString());
   });
   // $.get({
-  //   url: "sochain.com"
-  //   data: data,
+  //   url: "http://dogecoinerme.appspot.com/total",
+  //   data: {
+  //     uid: "sol",
+  //     domain: "block.io"
+  //   },
   //   success: success,
-  //   dataType: json
+  //   dataType: jsp
   // });
 
   // $.post({
-  //   url: "sochain.com",
-  //   data: data,
+  //   url: "http://dogecoinerme.appspot.com/oneclick",
+  //   data: {
+  //     uid: "sol",
+  //     domain: "sochain"
+  //   },
   //   success: success,
   //   dataType: json
   // });
