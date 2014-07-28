@@ -24,23 +24,21 @@
 } 
 
 #counter {
-  margin-top: -35px;
-  margin-left: 35px;
+  visibility: hidden;
+  margin-top: 4px;
+  margin-left: 10px;
   font-size: 30px;
   color: white;
 }
 
 #plus {
-/*  visibility: hidden;*/
+  visibility: hidden;
   height: 38px;
   width: 38px;
   color: rgb(102,102,102);
   background: url('img/plus.png') center no-repeat;
-/*  padding-left: 38px;*/
-/*  padding-top: -38px; */
   float: initial;
   background: url('');
-  /*38*/
 }
 
 #doge_icon {
